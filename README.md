@@ -97,14 +97,10 @@ cd BabySongs
 
 <div align="center">
 
-### 主界面
-<img src="screenshots/home.jpg" width="250" alt="主界面">
+### 主要功能
 
-### 播放详情
-<img src="screenshots/detail.jpg" width="250" alt="播放详情">
+<img src="screenshots/home.jpg" width="200" alt="主界面"> <img src="screenshots/detail.jpg" width="200" alt="播放详情"> <img src="screenshots/search.jpg" width="200" alt="搜索页面"> <img src="screenshots/playlist.jpg" width="200" alt="播放列表">
 
-### 搜索页面
-<img src="screenshots/search.jpg" width="250" alt="搜索页面">
 
 </div>
 
