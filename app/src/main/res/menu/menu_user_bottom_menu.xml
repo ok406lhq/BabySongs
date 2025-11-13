@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/user_bottom_menu_home"
+        android:title="首页"
+        android:icon="@drawable/icon_menu_user_home"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:visible="false"
+        android:id="@+id/user_bottom_menu_genre"
+        android:title="曲库"
+        android:icon="@drawable/icon_gd"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:visible="false"
+        android:id="@+id/user_bottom_menu_list"
+        android:title="列表"
+        android:icon="@drawable/icon_menu_user_list"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:visible="false"
+        android:id="@+id/user_bottom_menu_discuss"
+        android:title="讨论"
+        android:icon="@drawable/icon_gd"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/user_bottom_menu_my"
+        android:title="我的"
+        android:icon="@drawable/icon_user_bottom_menu_my"
+        app:showAsAction="always"
+        />
+
+
+</menu>

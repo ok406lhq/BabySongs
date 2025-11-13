@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".activity.user.SearchMusicActivity">
+
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/user_my"
+        android:layout_gravity="center_vertical|center_horizontal|center"
+        >
+
+        <ImageView
+            android:id="@+id/user_my_tx"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/user_tx" />
+
+        <TextView
+            android:id="@+id/user_my_nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="悲伤阡陌微笑"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            >
+
+            <TextView
+                android:id="@+id/user_my_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="居住地 :北京 "
+                android:textColor="#C3C3C3"
+                android:textSize="12sp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="性别 :"
+                android:textColor="#C3C3C3"
+                android:textSize="12sp"
+
+                />
+            <ImageView
+                android:id="@+id/user_my_sex"
+                android:layout_width="15dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/sex_man"
+                android:layout_marginRight="10dp"
+                />
+
+
+            <TextView
+                android:id="@+id/user_my_ling"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="村龄 :7年 "
+                android:textColor="#C3C3C3"
+                android:textSize="12sp"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+
+            >
+
+            <TextView
+                android:id="@+id/user_my_music_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 "
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="首"
+                android:textColor="#C3C3C3"
+                android:textSize="11sp"
+                />
+
+
+            <TextView
+                android:id="@+id/user_my_music_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="360 "
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_marginLeft="30dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分钟"
+                android:textColor="#C3C3C3"
+                android:textSize="10sp"
+                />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--修改个人信息-->
+            <Button
+                android:id="@+id/user_my_change_my_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="个人信息"
+                android:layout_marginLeft="15dp"
+                android:textColor="#F5F5F5"
+                android:textSize="12dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/rounded_button_background"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                android:id="@+id/user_my_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="退出账号"
+                android:layout_marginLeft="15dp"
+                android:textColor="#F5F5F5"
+                android:textSize="12dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:background="@drawable/rounded_button_background"
+                android:layout_marginBottom="20dp"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="285dp"
+        android:id="@+id/user_my_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/recycler_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:paddingTop="30dp"
+        />
+
+</RelativeLayout>

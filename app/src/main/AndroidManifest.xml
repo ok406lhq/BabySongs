@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:name="com.cool.music.MusicApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CoolMusic"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.man.UpdateMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.man.AddMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.man.GenreManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.man.ManManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.MySheetDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.ChangeUserMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.SearchMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.AddSearchMusicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.RunMusicDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.PostDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.MusicListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.user.UserManageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

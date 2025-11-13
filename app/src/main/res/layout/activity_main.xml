@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:src="@drawable/login"
+        android:layout_marginTop="80dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cool音乐"
+        android:layout_marginTop="20dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:gravity="center|center_vertical|center_horizontal"
+        android:layout_marginBottom="65dp"
+        android:textSize="25sp"
+        />
+
+
+    <EditText
+        android:id="@+id/login_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#B3FFFFFF"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="请输入账号"
+        android:textColorHint="#DCDCDC"
+        android:background="@drawable/edit_logon_bg"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:drawableLeft="@drawable/icon_login"
+        android:drawablePadding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/login_pwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#B3FFFFFF"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:hint="请输入密码"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColorHint="#DCDCDC"
+        android:padding="10dp"
+        android:background="@drawable/edit_logon_bg"
+        android:drawableLeft="@drawable/icon_pas"
+        android:drawablePadding="10dp"
+        android:inputType="textPassword"
+        />
+
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
+
+
+        <Button
+            android:id="@+id/login_denglu_btn"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:background="@drawable/button_logon_bg"
+            android:textColor="#FFFFFF"
+            android:layout_marginRight="20dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            />
+
+        <Button
+            android:id="@+id/login_denglu_register"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:background="@drawable/button_logon_bg"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="20dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

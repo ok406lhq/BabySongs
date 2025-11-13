@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@drawable/music_add_bg"
+android:layout_gravity="center|center_horizontal|center_vertical"
+tools:context=".activity.man.UpdateMusicActivity">
+
+
+<androidx.appcompat.widget.Toolbar
+    android:id="@+id/man_update_music_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/zhuti_color"
+    app:title="更改音乐"
+    app:titleTextColor="#FFFFFF"
+    app:navigationIcon="@drawable/back"
+    />
+
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:background="@drawable/rounded_button_background3"
+    android:layout_margin="20dp"
+
+
+    >
+
+
+    <EditText
+        android:id="@+id/man_update_music_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:hint="请输入歌名" />
+
+    <EditText
+        android:id="@+id/man_update_music_singer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:hint="请输入歌手"
+        />
+    <!-- 添加一个按钮用于选择和上传音乐文件 -->
+    <!-- 在 Button 下方添加 Switch -->
+    <Switch
+        android:id="@+id/man_update_music_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="是否更改音乐文件" />
+
+
+    <Button
+        android:id="@+id/man_update_music_add"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="更改音乐"
+        android:background="@drawable/music_bg"
+        android:layout_marginTop="20dp"/>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/man_music_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/music_bg"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        >
+        <SeekBar
+            android:id="@+id/man_music_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:thumbTint="#E7BF2A2A"
+            android:layout_centerInParent="true" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageButton
+                android:id="@+id/man_home_tx"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/icon_gd"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="15dp" />
+
+
+            <TextView
+                android:id="@+id/man_home_name"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="野山花-小铭"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginLeft="15dp"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+
+            <ImageButton
+                android:id="@+id/man_home_run"
+                android:layout_width="35dp"
+                android:layout_height="match_parent"
+                android:background="#00FFFFFF"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:src="@drawable/music_run"
+                android:scaleType="fitCenter"
+                android:layout_marginLeft="100dp"
+                android:layout_marginRight="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+</LinearLayout>

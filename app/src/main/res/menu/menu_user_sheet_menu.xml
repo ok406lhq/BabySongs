@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/user_sheet_menu_del"
+        android:title="删除"
+        android:icon="@drawable/icon_del"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/user_sheet_menu_update"
+        android:title="编辑"
+        android:icon="@drawable/icon_update"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/user_sheet_menu_add"
+        android:title="添加"
+        android:icon="@drawable/icon_add"
+        app:showAsAction="always"
+        />
+
+
+</menu>

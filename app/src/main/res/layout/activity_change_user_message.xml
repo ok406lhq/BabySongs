@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:orientation="vertical"
+android:id="@+id/main"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@drawable/bg"
+android:gravity="center_horizontal"
+tools:context=".activity.user.ChangeUserMessageActivity">
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        >
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/user_change_message_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00C78F0C"
+            app:titleTextColor="#FFFFFF"
+            app:title="修改个人信息"
+            app:navigationIcon="@drawable/back"
+            android:layout_marginTop="15dp"
+            />
+
+        <ImageView
+            android:id="@+id/user_change_message_tx"
+
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/tx"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/circle_background"
+            android:padding="15dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cool音乐"
+            android:layout_marginTop="20dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center|center_vertical|center_horizontal"
+            android:layout_marginBottom="65dp"
+            android:textSize="25sp"
+            />
+
+        <EditText
+            android:id="@+id/user_change_message_nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B3FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:hint="请输入昵称"
+            android:textColorHint="#DCDCDC"
+            android:background="@drawable/edit_logon_bg"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/icon_nick"
+            android:drawablePadding="10dp"
+
+            />
+
+
+
+
+        <EditText
+            android:id="@+id/user_change_message_pwd"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="50dp"
+            android:background="@drawable/edit_logon_bg"
+            android:drawableLeft="@drawable/icon_pas"
+            android:drawablePadding="10dp"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textColor="#B3FFFFFF"
+            android:textColorHint="#DCDCDC"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/user_change_message_address"
+
+            android:layout_marginTop="20dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#B3FFFFFF"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:hint="请输入地址"
+            android:textColorHint="#DCDCDC"
+            android:background="@drawable/edit_logon_bg"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/icon_address"
+            android:drawablePadding="10dp"
+            />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:padding="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edit_logon_bg"
+            >
+
+            <RadioButton
+                android:id="@+id/user_change_message_man"
+
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="男"
+                android:textColor="#DCDCDC"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="1"
+                android:textColorHint="#DCDCDC"
+                android:background="@drawable/edit_logon_bg"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
+
+            <RadioButton
+                android:id="@+id/user_change_message_woman"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="女"
+                android:textColor="#DCDCDC"
+                android:layout_marginEnd="16dp"
+                android:textColorHint="#DCDCDC"
+                android:background="@drawable/edit_logon_bg"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                />
+
+
+        </RadioGroup>
+
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center_horizontal|center_vertical">
+
+
+            <Button
+                android:id="@+id/user_change_message_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_logon_bg"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="更改个人信息"
+                android:textColor="#FFFFFF" />
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+
+
+</LinearLayout>

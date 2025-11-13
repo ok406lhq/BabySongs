@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.user.MusicListActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/man_home_music_list_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        app:title="歌单"
+        app:titleTextColor="#FFFFFF"
+        android:background="@color/zhuti_color"/>
+
+
+    <ImageView
+        android:id="@+id/man_home_music_list_bg"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/icon_gd"
+        android:scaleType="centerCrop"
+        android:layout_below="@+id/man_home_music_list_bar"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="220dp"
+        android:id="@+id/man_home_music_list_srecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/recycler_bg"
+        android:padding="5dp"
+
+
+        />
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5"
+    tools:context=".activity.user.SearchMusicActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:paddingTop="20dp"
+        android:id="@+id/user_sheet_music_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zhuti_color"
+        app:navigationIcon="@drawable/back">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/user_sheet_music_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/search_edit"
+            app:iconifiedByDefault="false"
+
+            app:queryHint="请输入歌名" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_sheet_music_list"
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

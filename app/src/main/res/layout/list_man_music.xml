@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/man_home_list_father"
+    android:gravity="left|center_vertical|center_horizontal"
+
+
+
+    >
+
+
+
+    <!--圆角矩形-->
+    <ImageView
+        android:id="@+id/man_home_list_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_gd"
+        android:padding="5dp"
+
+
+       />
+
+    <TextView
+        android:id="@+id/man_home_list_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:textColor="#D1313131"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textStyle="bold"
+        android:layout_toRightOf="@+id/man_home_list_img"
+        android:layout_toLeftOf="@+id/man_home_del"
+        android:text="怎么都要爱-李华"/>
+
+
+
+    <ImageView
+        android:id="@+id/man_home_del"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/icon_del_music"
+        android:layout_alignParentEnd="true"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>

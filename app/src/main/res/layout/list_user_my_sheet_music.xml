@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#00FFFFFF"
+    android:layout_marginBottom="5dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/user_home_sheet_my_list_father"
+    android:gravity="left|center_vertical|center_horizontal"
+    >
+
+
+
+    <!--圆角矩形-->
+    <ImageView
+        android:id="@+id/user_home_my_sheet_list_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/user_tx"
+        android:scaleType="fitXY"
+        android:padding="5dp"
+
+       />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="left|center_horizontal|center_vertical"
+        android:paddingLeft="5dp"
+        >
+
+
+
+        <TextView
+            android:id="@+id/user_home_my_sheet_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="15sp"
+            android:textColor="#D1313131"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:text="雨中寂寞|听阴天说什么"/>
+
+
+        <TextView
+            android:id="@+id/user_home_my_sheet_list_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#BF666666"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:text="歌单:50首·落花惜·未公布"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

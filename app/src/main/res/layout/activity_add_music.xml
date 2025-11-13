@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/music_add_bg"
+    android:layout_gravity="center|center_horizontal|center_vertical"
+    tools:context=".activity.man.AddMusicActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/man_add_music_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/zhuti_color"
+        app:title="添加音乐"
+        app:titleTextColor="#FFFFFF"
+        app:navigationIcon="@drawable/back"
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:background="@drawable/rounded_button_background3"
+        android:layout_margin="20dp"
+
+
+        >
+
+
+        <EditText
+            android:id="@+id/man_add_music_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:hint="请输入歌名" />
+
+        <EditText
+            android:id="@+id/man_add_music_singer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+
+            android:hint="请输入歌手"
+            />
+
+        <Spinner
+            android:id="@+id/man_add_music_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:padding="10dp"/>
+
+
+        <!-- 添加一个按钮用于选择和上传音乐文件 -->
+        <Button
+            android:id="@+id/man_add_music_add"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:text="添加音乐"
+            android:background="@drawable/music_bg"
+            android:layout_marginTop="20dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>
