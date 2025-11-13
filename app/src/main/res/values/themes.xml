@@ -25,4 +25,29 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">false</item>
     </style>
+
+    <!-- ✨✨✨ 闪屏主题（完全全屏） -->
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- 无标题栏 -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- 全屏显示 -->
+        <item name="android:windowFullscreen">true</item>
+
+        <!-- 透明状态栏和导航栏 -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+
+        <!-- 白色背景 -->
+        <item name="android:windowBackground">@android:color/white</item>
+
+        <!-- 布局延伸到系统栏后面 -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="p">shortEdges</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+
+        <!-- 防止内容被遮挡 -->
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
 </resources>
