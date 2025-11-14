@@ -241,7 +241,7 @@ public class MusicDao {
      */
     public static List<MusicBean> getMusicHotRanking()
     {
-        String sql="select d_music.* from (select music_id, count(*) as like_count from d_music_like group by music_id order by like_count desc limit 15) b left join d_music on d_music.id=b.music_id";
+        String sql="select d_music.* from (select music_id, count(*) as like_count from d_music_like group by music_id order by like_count desc limit 20) b left join d_music on d_music.id=b.music_id";
         List<MusicBean> list = SqliteT.query(sql, MusicBean.class);
         return list;
     }

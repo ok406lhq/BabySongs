@@ -20,7 +20,7 @@ import com.cool.music.R;
  */
 public class DBUntil extends SQLiteOpenHelper {
 
-    private static final int version = 80;//版本号，每次更改表结构都需要加1，否则不生效
+    private static final int version = 81;//版本号，每次更改表结构都需要加1，否则不生效
 
     private static final String databaseName = "db_music.db";//数据库名称必须以db结尾
 
@@ -117,56 +117,85 @@ public class DBUntil extends SQLiteOpenHelper {
         String music3[] = {"4", "大公鸡", "momo", musicImg3, txPathU, "3"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music3);
 
-// ✨ 添加新歌曲
+        // ✨ 添加新歌曲
         String musicImg4 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.sszymmh, musicImg4);
         String music4[] = {"5", "世上只有momo好", "momo", musicImg4, txPathU, "4"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music4);
 
-// ✨✨✨ 添加新歌曲：黑猫警长
+        // ✨✨✨ 添加新歌曲：黑猫警长
         String musicImg5 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.hei_mao_jing_zhang, musicImg5);
         String music5[] = {"6", "黑猫警长", "momo", musicImg5, txPathU, "1"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music5);
 
-// ✨✨✨ 添加新歌曲：兰花草
+        // ✨✨✨ 添加新歌曲：兰花草
         String musicImg6 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.lan_hua_cao, musicImg6);
         String music6[] = {"7", "兰花草", "momo", musicImg6, txPathU, "4"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music6);
 
-// ✨✨✨ 添加新歌曲：两只老虎
+        // ✨✨✨ 添加新歌曲：两只老虎
         String musicImg7 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.liang_zhi_lao_hu, musicImg7);
         String music7[] = {"8", "两只老虎", "momo", musicImg7, txPathU, "1"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music7);
 
-// ✨✨✨ 添加新歌曲：卖报歌
+        // ✨✨✨ 添加新歌曲：卖报歌
         String musicImg8 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.mai_bao_ge, musicImg8);
         String music8[] = {"9", "卖报歌", "momo", musicImg8, txPathU, "1"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music8);
 
-// ✨✨✨ 添加新歌曲：卖汤圆
+        // ✨✨✨ 添加新歌曲：卖汤圆
         String musicImg9 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.mai_tang_yuan, musicImg9);
         String music9[] = {"10", "卖汤圆", "momo", musicImg9, txPathU, "1"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music9);
 
-// ✨✨✨ 添加新歌曲：让我们荡起双桨
+        // ✨✨✨ 添加新歌曲：让我们荡起双桨
         String musicImg10 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.rwmdqsj, musicImg10);
         String music10[] = {"11", "让我们荡起双桨", "momo", musicImg10, txPathU, "4"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music10);
 
-// ✨✨✨ 添加新歌曲：上学歌
+        // ✨✨✨ 添加新歌曲：上学歌
         String musicImg11 = FileUntil.getFileName();
         txPathU = FileUntil.saveMusicThread(context, R.raw.shang_xue_ge, musicImg11);
         String music11[] = {"12", "上学歌", "momo", musicImg11, txPathU, "1"};
         db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music11);
 
-        //用户删除表单   管理员删除音乐
+        // ✨✨✨ 添加新歌曲：数鸭子
+        String musicImg12 = FileUntil.getFileName();
+        txPathU = FileUntil.saveMusicThread(context, R.raw.shu_ya_zi, musicImg12);
+        String music12[] = {"13", "数鸭子", "momo", musicImg12, txPathU, "1"};
+        db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music12);
 
+        // ✨✨✨ 添加新歌曲：哇哈哈
+        String musicImg13 = FileUntil.getFileName();
+        txPathU = FileUntil.saveMusicThread(context, R.raw.wa_ha_ha, musicImg13);
+        String music13[] = {"14", "哇哈哈", "momo", musicImg13, txPathU, "1"};
+        db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music13);
+
+        // ✨✨✨ 添加新歌曲：外婆的澎湖湾
+        String musicImg14 = FileUntil.getFileName();
+        txPathU = FileUntil.saveMusicThread(context, R.raw.wai_po_de_peng_hu_wan, musicImg14);
+        String music14[] = {"15", "外婆的澎湖湾", "momo", musicImg14, txPathU, "4"};
+        db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music14);
+
+        // ✨✨✨ 添加新歌曲：我是一个粉刷匠
+        String musicImg15 = FileUntil.getFileName();
+        txPathU = FileUntil.saveMusicThread(context, R.raw.wo_shi_yi_ge_fens_jiang, musicImg15);
+        String music15[] = {"16", "我是一个粉刷匠", "momo", musicImg15, txPathU, "1"};
+        db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music15);
+
+        // ✨✨✨ 添加新歌曲：小燕子
+        String musicImg16 = FileUntil.getFileName();
+        txPathU = FileUntil.saveMusicThread(context, R.raw.xiao_yan_zi, musicImg16);
+        String music16[] = {"17", "小燕子", "momo", musicImg16, txPathU, "4"};
+        db.execSQL("insert into d_music (id,name,singer,img,path,genre_id) values(?,?,?,?,?,?)", music16);
+
+        //用户删除表单   管理员删除音乐
 
         //这个歌曲与音乐对应的表单  歌单单id 音乐id
         db.execSQL("drop table if exists d_sheet_music");
@@ -190,7 +219,7 @@ public class DBUntil extends SQLiteOpenHelper {
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"3", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"4", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"5", "admin"});
-// ✨✨✨ 添加新歌曲到播放列表
+        // ✨✨✨ 添加新歌曲到播放列表
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"6", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"7", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"8", "admin"});
@@ -198,6 +227,11 @@ public class DBUntil extends SQLiteOpenHelper {
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"10", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"11", "admin"});
         db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"12", "admin"});
+        db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"13", "admin"});
+        db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"14", "admin"});
+        db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"15", "admin"});
+        db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"16", "admin"});
+        db.execSQL("insert into d_music_play(id,user_id) values(?,?)", new String[]{"17", "admin"});
 
 
         //创建一个歌单表  歌单的ID,歌单的名字，歌单的封面，歌单的创建时间，歌单用户ID，      歌单的收藏量
@@ -217,6 +251,11 @@ public class DBUntil extends SQLiteOpenHelper {
         db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"10", "admin"});
         db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"11", "admin"});
         db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"12", "admin"});
+        db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"13", "admin"});
+        db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"14", "admin"});
+        db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"15", "admin"});
+        db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"16", "admin"});
+        db.execSQL("insert into d_music_like(music_id,user_id) values(?,?)", new String[]{"17", "admin"});
 
 
         //创建一个歌单表  歌单的ID,歌单的名字，歌单的封面，歌单的创建时间，歌单用户ID，      歌单的收藏量
@@ -238,6 +277,11 @@ public class DBUntil extends SQLiteOpenHelper {
         db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"10", "admin"});
         db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"11", "admin"});
         db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"12", "admin"});
+        db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"13", "admin"});
+        db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"14", "admin"});
+        db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"15", "admin"});
+        db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"16", "admin"});
+        db.execSQL("insert into d_music_listen(music_id,user_id) values(?,?)", new String[]{"17", "admin"});
 
 
         //创建帖子表（讨论区）
