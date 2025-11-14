@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         maven { url = uri("https://maven.aliyun.com/repository/public") }
         maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://jitpack.io") } // ✨ 添加这行
 
         google {
             content {
@@ -19,6 +20,7 @@ dependencyResolutionManagement {
     repositories {
         maven { url = uri("https://maven.aliyun.com/repository/public") }
         maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://jitpack.io") } // ✨ 添加这行
 
         google()
         mavenCentral()

@@ -48,4 +48,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // ✨ PhotoView 库（支持缩放、拖拽）
+    implementation("com.github.chrisbanes:PhotoView:2.3.0")
 }

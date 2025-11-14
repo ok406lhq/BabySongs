@@ -24,6 +24,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.cool.music.MainActivity;
 import com.cool.music.R;
 import com.cool.music.activity.user.ChangeUserMessageActivity;
+import com.cool.music.activity.user.PhotoWallActivity;
 import com.cool.music.adapter.user.MySheetMusicAdapter;
 import com.cool.music.adapter.user.SheetMusicAdapter;
 import com.cool.music.bean.MusicBean;
@@ -46,6 +47,13 @@ public class MyFragment extends Fragment {
     View rootview;
     String account=null;
     RecyclerView listDe=null;
+
+    // ✨✨✨ 彩蛋相关变量
+    private int clickCount = 0;
+    private long lastClickTime = 0;
+    private static final int REQUIRED_CLICKS = 5; // 需要点击5次
+    private static final long CLICK_TIMEOUT = 2000; // 2秒内完成
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -75,13 +83,55 @@ public class MyFragment extends Fragment {
             }
         });
 
-        //加载列表
+        // ✨✨✨ 彩蛋按钮：连续点击头像5次触发
+        ImageView avatar = rootview.findViewById(R.id.user_my_tx);
+        avatar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleEasterEggClick();
+            }
+        });
 
 
 
 
 
         return rootview;
+    }
+
+    /**
+     * ✨✨✨ 处理彩蛋点击逻辑
+     */
+    private void handleEasterEggClick() {
+        long currentTime = System.currentTimeMillis();
+
+        // 如果超过2秒没点击，重置计数
+        if (currentTime - lastClickTime > CLICK_TIMEOUT) {
+            clickCount = 0;
+        }
+
+        clickCount++;
+        lastClickTime = currentTime;
+
+        // 达到点击次数，触发彩蛋
+        if (clickCount >= REQUIRED_CLICKS) {
+            clickCount = 0; // 重置计数
+            openPhotoWall();
+        } else {
+            // 可选：显示提示（剩余次数）
+            if (clickCount >= 3) {
+                Tools.Toast(getContext(), "再点 " + (REQUIRED_CLICKS - clickCount) + " 次发现惊喜 ✨");
+            }
+        }
+    }
+
+    /**
+     * ✨✨✨ 打开照片墙
+     */
+    private void openPhotoWall() {
+        Tools.Toast(getContext(), "🎉 恭喜发现彩蛋！");
+        Intent intent = new Intent(getContext(), PhotoWallActivity.class);
+        startActivity(intent);
     }
 
     private void loadMyMessage() {

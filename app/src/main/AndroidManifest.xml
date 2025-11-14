@@ -85,6 +85,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ✨✨✨ 照片墙 Activity -->
+        <activity
+            android:name=".activity.user.PhotoWallActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CoolMusic"/>
+
+        <!-- ✨✨✨ 图片预览 Activity -->
+        <activity
+            android:name=".activity.user.ImagePreviewActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/FullScreenTheme"/>
     </application>
 
 </manifest>

@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/home_header_gradient"
-        android:paddingTop="40dp"
-        android:paddingBottom="30dp"
+        android:paddingTop="35dp"
+        android:paddingBottom="15dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp">
 
@@ -24,10 +24,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="发现音乐"
-            android:textSize="28sp"
+            android:textSize="25sp"
             android:textStyle="bold"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="10dp"/>
 
         <!-- 搜索框 -->
         <androidx.cardview.widget.CardView
@@ -40,13 +40,13 @@
             <Button
                 android:id="@+id/man_home_music_search"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:text="搜索儿歌、歌手..."
                 android:textSize="15sp"
                 android:textColor="#999999"
                 android:background="@android:color/transparent"
                 android:drawableLeft="@drawable/search"
-                android:drawablePadding="12dp"
+                android:drawablePadding="10dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
                 android:gravity="center_vertical|left"
@@ -110,8 +110,8 @@
         android:gravity="center_vertical"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingTop="20dp"
-        android:paddingBottom="12dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:background="#F5F5F5">
 
         <ImageView
@@ -126,7 +126,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="我的儿歌"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="#333333"/>
 
@@ -146,41 +146,82 @@
             android:background="?attr/selectableItemBackground"/>
     </LinearLayout>
 
-    <!-- ========== 可滚动区域：只有歌曲列表卡片 ========== -->
-    <androidx.core.widget.NestedScrollView
+    <!-- ========== 可滚动区域：歌曲列表 + 底部提示 ========== -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true"
-        android:background="#F5F5F5">
+        android:layout_weight="1">
 
-        <LinearLayout
+        <!-- ✨ 使用支持回弹效果的 NestedScrollView -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="80dp">
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:overScrollMode="always"
+            android:background="#F5F5F5">
 
-            <!-- 歌曲列表卡片 -->
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="#FFFFFF">
+                android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/man_home_rank_srecycler"
+                <!-- 歌曲列表卡片 -->
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:nestedScrollingEnabled="false"/>
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="8dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="2dp"
+                    app:cardBackgroundColor="#FFFFFF">
 
-            </androidx.cardview.widget.CardView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/man_home_rank_srecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:nestedScrollingEnabled="false"/>
 
-        </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-    </androidx.core.widget.NestedScrollView>
+                <!-- ✨✨✨ 底部提示区域 -->
+                <LinearLayout
+                    android:id="@+id/bottom_hint_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="90dp"
+                    android:alpha="0"
+                    android:visibility="gone">
+
+                    <!-- 分割线 -->
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="2dp"
+                        android:background="#E0E0E0"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- 提示文字 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已经到底啦 ~"
+                        android:textSize="13sp"
+                        android:textColor="#999999"
+                        android:drawableTop="@drawable/ic_bottom_hint"
+                        android:drawablePadding="8dp"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </FrameLayout>
 
 </LinearLayout>

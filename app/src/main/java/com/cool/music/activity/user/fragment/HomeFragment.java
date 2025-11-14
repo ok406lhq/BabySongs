@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,7 +36,9 @@ import java.util.List;
  * 这个类用于操作首页
  */
 public class HomeFragment extends Fragment {
-
+    private NestedScrollView nestedScrollView;
+    private LinearLayout bottomHintLayout;
+    private boolean hasShownBottomHint = false;
     private View rootview;
 
     @Nullable
@@ -42,6 +46,12 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootview = inflater.inflate(R.layout.frame_user_home, container, false);
 
+        // 初始化控件
+        nestedScrollView = rootview.findViewById(R.id.nested_scroll_view);
+        bottomHintLayout = rootview.findViewById(R.id.bottom_hint_layout);
+
+        // ✨✨✨ 设置滚动监听
+        setupScrollListener();
 
         // 推荐歌单（目前隐藏）
         List<PlayMusicBean> list = PlayMusicDao.getPlayMusic();
@@ -94,6 +104,63 @@ public class HomeFragment extends Fragment {
         }
 
         return rootview;
+    }
+
+    /**
+     * ✨✨✨ 设置滚动监听，实现底部提示
+     */
+    private void setupScrollListener() {
+        nestedScrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(NestedScrollView v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                // 检查是否滚动到底部
+                if (!v.canScrollVertically(1)) {
+                    // 已经到底部
+                    if (!hasShownBottomHint) {
+                        showBottomHint();
+                        hasShownBottomHint = true;
+                    }
+                } else {
+                    // 还没到底部，重置标志
+                    if (hasShownBottomHint && scrollY < oldScrollY) {
+                        // 向上滚动时隐藏提示
+                        hideBottomHint();
+                        hasShownBottomHint = false;
+                    }
+                }
+            }
+        });
+    }
+
+    /**
+     * ✨✨✨ 显示底部提示（带动画）
+     */
+    private void showBottomHint() {
+        if (bottomHintLayout != null) {
+            bottomHintLayout.setVisibility(View.VISIBLE);
+            bottomHintLayout.animate()
+                    .alpha(1f)
+                    .setDuration(300)
+                    .start();
+        }
+    }
+
+    /**
+     * ✨✨✨ 隐藏底部提示（带动画）
+     */
+    private void hideBottomHint() {
+        if (bottomHintLayout != null) {
+            bottomHintLayout.animate()
+                    .alpha(0f)
+                    .setDuration(200)
+                    .withEndAction(new Runnable() {
+                        @Override
+                        public void run() {
+                            bottomHintLayout.setVisibility(View.GONE);
+                        }
+                    })
+                    .start();
+        }
     }
 
     /**

@@ -6,6 +6,7 @@
     <color name="text_color">#BC262424</color>
     <color name="bg_color">#EFF0F5</color>
     <color name="detail_text_color">#ADADAD</color>
+    <color name="primary_pink">#FF6B9D</color>
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
