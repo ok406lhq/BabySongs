@@ -24,6 +24,7 @@ import com.bumptech.glide.request.RequestOptions;
 import com.cool.music.MainActivity;
 import com.cool.music.R;
 import com.cool.music.activity.user.ChangeUserMessageActivity;
+import com.cool.music.activity.user.LocalScanActivity;
 import com.cool.music.activity.user.PhotoWallActivity;
 import com.cool.music.adapter.user.MySheetMusicAdapter;
 import com.cool.music.adapter.user.SheetMusicAdapter;
@@ -72,6 +73,17 @@ public class MyFragment extends Fragment {
             }
         });
 
+
+        // 扫描本地音乐按钮
+        Button scanLocal = rootview.findViewById(R.id.user_my_scan_local);
+        scanLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 打开本地音乐扫描界面
+                Intent intent = new Intent(rootview.getContext(), LocalScanActivity.class);
+                startActivity(intent);
+            }
+        });
 
         Button exit=rootview.findViewById(R.id.user_my_exit);
         exit.setOnClickListener(new View.OnClickListener() {
