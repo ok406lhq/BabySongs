@@ -1,9 +1,6 @@
 pluginManagement {
     repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        maven { url = uri("https://jitpack.io") } // ✨ 添加这行
-
+        gradlePluginPortal()
         google {
             content {
                 includeGroupByRegex("com\\.android.*")
@@ -12,7 +9,9 @@ pluginManagement {
             }
         }
         mavenCentral()
-        gradlePluginPortal()
+        maven { url = uri("https://maven.aliyun.com/repository/public") }
+        maven { url = uri("https://maven.aliyun.com/repository/google") }
+        maven { url = uri("https://jitpack.io") } // ✨ 添加这行
     }
 }
 dependencyResolutionManagement {

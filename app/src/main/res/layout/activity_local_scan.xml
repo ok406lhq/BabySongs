@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/home_header_gradient"
+        android:elevation="4dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/icon_gd"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="返回" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="扫描本地音乐"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp" />
+    </LinearLayout>
+
+    <!-- 状态显示 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#FFFFFF"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="点击下方按钮开始扫描"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:gravity="center" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- 操作按钮 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center"
+        android:background="#FFFFFF">
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="开始扫描"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button_background"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btn_select_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="全选"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button_background"
+            android:layout_margin="4dp" />
+
+        <Button
+            android:id="@+id/btn_deselect_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取消全选"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/rounded_button_background"
+            android:layout_margin="4dp" />
+    </LinearLayout>
+
+    <!-- 选中数量显示 -->
+    <TextView
+        android:id="@+id/tv_selected_count"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="已选择: 0 首"
+        android:textSize="14sp"
+        android:textColor="#666666"
+        android:padding="8dp"
+        android:background="#FFFFFF" />
+
+    <!-- 音乐列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_local_music"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:paddingTop="8dp" />
+
+    <!-- 添加到播放列表按钮 -->
+    <Button
+        android:id="@+id/btn_add_to_playlist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加选中的音乐到播放列表"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_button_background"
+        android:layout_margin="16dp"
+        android:padding="12dp"
+        android:enabled="false" />
+
+</LinearLayout>
