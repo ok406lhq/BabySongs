@@ -1,6 +1,7 @@
 package com.cool.music.activity.user;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ import com.cool.music.dao.PlayMusicDao;
 import com.cool.music.until.LocalMusicScanner;
 import com.cool.music.until.Tools;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -215,6 +217,7 @@ public class LocalScanActivity extends AppCompatActivity {
             int addedCount = 0;
             int duplicateCount = 0;
             String currentAccount = Tools.getOnAccount(this);
+            List<MusicBean> successfullyAdded = new ArrayList<>();
 
             for (MusicBean music : selectedMusic) {
                 try {
@@ -235,11 +238,13 @@ public class LocalScanActivity extends AppCompatActivity {
                             // 同时添加到当前用户的播放列表
                             PlayMusicDao.addToPlaylist(currentAccount, music.getId());
                             addedCount++;
+                            successfullyAdded.add(music);
                         }
                     } else {
                         // 即使歌曲已存在，也添加到播放列表（如果还没有的话）
                         PlayMusicDao.addToPlaylist(currentAccount, music.getId());
                         duplicateCount++;
+                        successfullyAdded.add(music);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -248,6 +253,7 @@ public class LocalScanActivity extends AppCompatActivity {
 
             final int finalAddedCount = addedCount;
             final int finalDuplicateCount = duplicateCount;
+            final List<MusicBean> finalSuccessfullyAdded = successfullyAdded;
 
             mainHandler.post(() -> {
                 progressBar.setVisibility(View.GONE);
@@ -263,9 +269,13 @@ public class LocalScanActivity extends AppCompatActivity {
                 Tools.Toast(this, message);
 
                 if (finalAddedCount > 0 || finalDuplicateCount > 0) {
-                    // 清空选择
-                    adapter.deselectAll();
-                    updateSelectedCount();
+                    // 准备返回数据
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("selected_music", new ArrayList<>(finalSuccessfullyAdded));
+                    setResult(RESULT_OK, resultIntent);
+                    
+                    // 关闭当前Activity
+                    finish();
                 }
             });
         });
