@@ -39,6 +39,7 @@ import com.cool.music.until.Tools;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -48,6 +49,9 @@ public class MyFragment extends Fragment {
     View rootview;
     String account=null;
     RecyclerView listDe=null;
+    
+    // Request code for LocalScanActivity
+    private static final int REQUEST_LOCAL_SCAN = 1001;
 
     // ✨✨✨ 彩蛋相关变量
     private int clickCount = 0;
@@ -81,7 +85,7 @@ public class MyFragment extends Fragment {
             public void onClick(View v) {
                 // 打开本地音乐扫描界面
                 Intent intent = new Intent(rootview.getContext(), LocalScanActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_LOCAL_SCAN);
             }
         });
 
@@ -144,6 +148,29 @@ public class MyFragment extends Fragment {
         Tools.Toast(getContext(), "🎉 恭喜发现彩蛋！");
         Intent intent = new Intent(getContext(), PhotoWallActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * 接收从LocalScanActivity返回的结果
+     */
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        
+        if (requestCode == REQUEST_LOCAL_SCAN && resultCode == -1 && data != null) {
+            // RESULT_OK = -1 in Activity class
+            @SuppressWarnings("unchecked")
+            List<MusicBean> selectedMusic = (List<MusicBean>) data.getSerializableExtra("selected_music");
+            
+            if (selectedMusic != null && !selectedMusic.isEmpty()) {
+                // 音乐已经在LocalScanActivity中添加到数据库了
+                // 这里只需要刷新UI
+                Tools.Toast(getContext(), "已添加 " + selectedMusic.size() + " 首音乐");
+                
+                // 刷新我的音乐列表
+                loadMyMessage();
+            }
+        }
     }
 
     private void loadMyMessage() {
