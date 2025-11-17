@@ -168,6 +168,35 @@ public class LocalMusicScanner {
     }
 
     /**
+     * 从MP3文件中提取专辑封面
+     * 返回Base64编码的图片字符串，可用于数据库存储
+     *
+     * @param path 音乐文件路径
+     * @return Base64编码的封面图片，如果没有封面返回null
+     */
+    public static String extractAlbumArt(String path) {
+        MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+        try {
+            retriever.setDataSource(path);
+            byte[] art = retriever.getEmbeddedPicture();
+            
+            if (art != null) {
+                // 将字节数组转换为Base64字符串
+                return android.util.Base64.encodeToString(art, android.util.Base64.DEFAULT);
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error extracting album art from: " + path, e);
+        } finally {
+            try {
+                retriever.release();
+            } catch (Exception e) {
+                Log.e(TAG, "Error releasing retriever", e);
+            }
+        }
+        return null;
+    }
+
+    /**
      * 格式化时长（毫秒转为分:秒）
      *
      * @param durationMs 时长（毫秒）

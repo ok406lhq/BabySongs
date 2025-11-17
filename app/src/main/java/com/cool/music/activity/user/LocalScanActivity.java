@@ -23,6 +23,7 @@ import com.cool.music.R;
 import com.cool.music.adapter.user.LocalMusicAdapter;
 import com.cool.music.bean.MusicBean;
 import com.cool.music.dao.MusicDao;
+import com.cool.music.dao.PlayMusicDao;
 import com.cool.music.until.LocalMusicScanner;
 import com.cool.music.until.Tools;
 
@@ -213,14 +214,15 @@ public class LocalScanActivity extends AppCompatActivity {
         executorService.execute(() -> {
             int addedCount = 0;
             int duplicateCount = 0;
+            String currentAccount = Tools.getOnAccount(this);
 
             for (MusicBean music : selectedMusic) {
                 try {
-                    // 检查是否已存在（通过路径判断）
+                    // 检查是否已存在（通过ID判断）
                     MusicBean existing = MusicDao.getMusicById(music.getId());
 
                     if (existing == null) {
-                        // 添加到数据库
+                        // 添加到音乐库
                         int result = MusicDao.addMusic(
                                 music.getId(),
                                 music.getName(),
@@ -230,9 +232,13 @@ public class LocalScanActivity extends AppCompatActivity {
                         );
 
                         if (result > 0) {
+                            // 同时添加到当前用户的播放列表
+                            PlayMusicDao.addToPlaylist(currentAccount, music.getId());
                             addedCount++;
                         }
                     } else {
+                        // 即使歌曲已存在，也添加到播放列表（如果还没有的话）
+                        PlayMusicDao.addToPlaylist(currentAccount, music.getId());
                         duplicateCount++;
                     }
                 } catch (Exception e) {
@@ -247,15 +253,16 @@ public class LocalScanActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 btnAddToPlaylist.setEnabled(true);
 
-                String message = "成功添加 " + finalAddedCount + " 首音乐";
+                String message = "成功添加 " + finalAddedCount + " 首新音乐";
                 if (finalDuplicateCount > 0) {
-                    message += "，跳过 " + finalDuplicateCount + " 首重复的音乐";
+                    message += "，" + finalDuplicateCount + " 首已存在";
                 }
+                message += "到播放列表";
 
                 tvStatus.setText(message);
                 Tools.Toast(this, message);
 
-                if (finalAddedCount > 0) {
+                if (finalAddedCount > 0 || finalDuplicateCount > 0) {
                     // 清空选择
                     adapter.deselectAll();
                     updateSelectedCount();
