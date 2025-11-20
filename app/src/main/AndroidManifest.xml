@@ -42,6 +42,9 @@
             android:name=".activity.user.ChangeUserMessageActivity"
             android:exported="false" />
         <activity
+            android:name=".activity.user.LocalScanActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.user.SearchMusicActivity"
             android:exported="false" />
         <activity
