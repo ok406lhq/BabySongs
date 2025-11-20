@@ -68,7 +68,7 @@ public class HomeFragment extends Fragment {
         }
 
         // 开始加载音乐热榜（按收藏量排序，前5首）
-        List<MusicBean> list2 = MusicDao.getMusicHotRanking();
+        List<MusicBean> list2 = MusicDao.getMusicAll();
 
         SheetMusicAdapter dee = new SheetMusicAdapter(list2);
 
@@ -168,7 +168,7 @@ public class HomeFragment extends Fragment {
      */
     private void playAllMusic() {
         // 获取所有音乐列表
-        List<MusicBean> musicList = MusicDao.getMusicHotRanking();
+        List<MusicBean> musicList = MusicDao.getMusicAll();
 
         if (musicList == null || musicList.size() == 0) {
             Tools.Toast(getContext(), "暂无可播放的歌曲");
