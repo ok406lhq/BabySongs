@@ -48,14 +48,14 @@ public class PlayMusicAdapter  extends  RecyclerView.Adapter<PlayMusicAdapter.vi
 
     @NonNull
     @Override
-    public PlayMusicAdapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
 
         View convertView = inflater.inflate(R.layout.list_user_play_music, parent, false);
 
 
-        PlayMusicAdapter.viewHolder viewHolder = new PlayMusicAdapter.viewHolder(convertView);
+        viewHolder viewHolder = new viewHolder(convertView);
 
 
 

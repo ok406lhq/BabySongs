@@ -37,14 +37,14 @@ public class ManMusicAdapter extends  RecyclerView.Adapter<ManMusicAdapter.viewH
 
     @NonNull
     @Override
-    public ManMusicAdapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
 
         View convertView = inflater.inflate(R.layout.list_man_music, parent, false);
 
 
-        ManMusicAdapter.viewHolder viewHolder = new ManMusicAdapter.viewHolder(convertView);
+        viewHolder viewHolder = new viewHolder(convertView);
 
 
 

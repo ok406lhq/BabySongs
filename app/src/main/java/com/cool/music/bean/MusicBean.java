@@ -1,9 +1,6 @@
 package com.cool.music.bean;
 
-import java.io.Serializable;
-
-public class MusicBean implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class MusicBean {
 
     private String id;
     private String name;

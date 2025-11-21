@@ -37,14 +37,14 @@ public class SheetMusicDetailAdapter extends  RecyclerView.Adapter<SheetMusicDet
 
     @NonNull
     @Override
-    public SheetMusicDetailAdapter.viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         LayoutInflater inflater=LayoutInflater.from(parent.getContext());
 
         View convertView = inflater.inflate(R.layout.list_user_sheet_music_detail, parent, false);
 
 
-        SheetMusicDetailAdapter.viewHolder viewHolder = new SheetMusicDetailAdapter.viewHolder(convertView);
+        viewHolder viewHolder = new viewHolder(convertView);
 
 
 
